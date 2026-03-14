@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can You Be My Girlfriend?</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.container{
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    width:350px;
+}
+
+h1{
+    color:#ff4b5c;
+    margin-bottom:30px;
+}
+
+.buttons{
+    position:relative;
+    height:120px;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yes{
+    background:#28a745;
+    color:white;
+    margin-right:20px;
+}
+
+#yes:hover{
+    background:#218838;
+}
+
+#no{
+    background:#dc3545;
+    color:white;
+    position:absolute;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Can you be my Girlfriend? ❤️</h1>
+
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+</div>
+
+<script>
+
+const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
+
+noButton.addEventListener("mouseover", moveButton);
+noButton.addEventListener("click", moveButton);
+
+function moveButton(){
+    const container = document.querySelector(".buttons");
+
+    const maxX = container.clientWidth - noButton.clientWidth;
+    const maxY = container.clientHeight - noButton.clientHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noButton.style.left = randomX + "px";
+    noButton.style.top = randomY + "px";
+}
+
+yesButton.addEventListener("click", function(){
+    alert("I love you too, I know you really love me ❤️");
+});
+
+</script>
+
+</body>
+</html>
+
